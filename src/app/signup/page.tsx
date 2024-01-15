@@ -1,59 +1,165 @@
-import { Flex, Box, AspectRatio, Text } from "@radix-ui/themes";
+import {
+  Theme,
+  Box,
+  Text,
+  TextFieldRoot,
+  TextFieldInput,
+  Button,
+} from "@radix-ui/themes";
+import { EyeOpenIcon } from "@radix-ui/react-icons";
 import React from "react";
-const ImageComponent = () => {
+
+function Signup() {
   return (
-    <Flex className="min-h-screen bg-white">
-      <Box className="w-1/2">
-        <AspectRatio ratio={1} className="w-full h-full">
+    <Theme>
+      <Box
+        style={{
+          display: "flex",
+          fontFamily: "sans-serif",
+        }}
+      >
+        <Box
+          style={{
+            backgroundColor: "#e6f7f8",
+            flexGrow: 1,
+            padding: "24px",
+            maxWidth: "30%",
+            margin: "-10px",
+          }}
+        >
           <img
-            src="/food.png"
-            alt="Salad"
-            className="object-cover w-full h-full"
+            src="/food.png" // Replace with actual image URL
+            alt="Healthy Food"
+            style={{
+              width: "100%",
+              height: "auto",
+              borderRadius: "8px",
+            }}
           />
-        </AspectRatio>
+        </Box>
+        <Box
+          style={{
+            padding: "64px",
+            flexGrow: 1,
+          }}
+        >
+          <Text
+            as="h2"
+            size="8"
+            style={{
+              color: "#333",
+              marginBottom: "16px",
+            }}
+          >
+            Sign up
+          </Text>
+          <Text
+            size="3"
+            style={{
+              color: "#666",
+              marginBottom: "32px",
+            }}
+          >
+            Create your account
+          </Text>
+          <Box
+            style={{
+              marginBottom: "16px",
+            }}
+          >
+            <TextFieldRoot
+              style={{
+                marginBottom: "12px",
+              }}
+            >
+              <TextFieldInput placeholder="Enter Name*" />
+            </TextFieldRoot>
+            <TextFieldRoot
+              style={{
+                marginBottom: "12px",
+              }}
+            >
+              <TextFieldInput placeholder="Enter Email*" />
+            </TextFieldRoot>
+            <TextFieldRoot>
+              <TextFieldInput placeholder="Password*" />
+              <EyeOpenIcon width="16" height="16" />
+            </TextFieldRoot>
+          </Box>
+          <Button
+            style={{
+              background: "#00766c",
+              color: "#fff",
+              width: "100%",
+              marginBottom: "16px",
+            }}
+          >
+            Sign up
+          </Button>
+          <Box
+            style={{
+              textAlign: "center",
+              margin: "16px 0",
+            }}
+          >
+            <hr
+              style={{
+                border: "none",
+                borderTop: "1px solid #ddd",
+                marginBottom: "16px",
+              }}
+            />
+            <Text
+              as="span"
+              size="3"
+              style={{
+                color: "#666",
+              }}
+            >
+              or
+            </Text>
+          </Box>
+          <Button
+            style={{
+              background: "#fff",
+              color: "#666",
+              width: "100%",
+              marginBottom: "16px",
+              border: "1px solid #ddd",
+            }}
+          >
+            <div
+              style={{
+                marginRight: "8px",
+                width: "18px",
+                height: "18px",
+              }}
+            />
+            Sign up with Google
+          </Button>
+          <Text
+            as="p"
+            size="2"
+            style={{
+              textAlign: "center",
+              color: "#666",
+            }}
+          >
+            Already have an account?{" "}
+            <a
+              href="#"
+              style={{
+                color: "#00766c",
+              }}
+            >
+              Log in
+            </a>{" "}
+            your account.
+          </Text>
+        </Box>
       </Box>
-      <Flex className="w-1/2 flex-col justify-center p-16">
-        <Text className="text-3xl font-bold mb-6">Sign up</Text>
-        <Text className="text-lg mb-2">Create your account</Text>
-        <Text className="text-sm font-semibold mb-1">Enter Name*</Text>
-        <input
-          type="text"
-          placeholder="Enter your name"
-          className="mb-4 p-2 border rounded"
-        />
-        <Text className="text-sm font-semibold mb-1">Enter Email*</Text>
-        <input
-          type="email"
-          placeholder="Enter your email"
-          className="mb-4 p-2 border rounded"
-        />
-        <Text className="text-sm font-semibold mb-1">Password*</Text>
-        <input
-          type="password"
-          placeholder="At least 8 characters"
-          className="mb-6 p-2 border rounded"
-        />
-        <button className="bg-teal-500 text-white py-2 rounded mb-4">
-          Sign up
-        </button>
-        <Flex className="items-center">
-          <Box className="flex-grow h-px bg-gray-300" />
-          <Text className="mx-4">or</Text>
-          <Box className="flex-grow h-px bg-gray-300" />
-        </Flex>
-        <button className="bg-white text-gray-700 py-2 rounded border border-gray-300 mt-4 flex items-center justify-center">
-          <img src="/placeholder.png" alt="Google" className="mr-2" />
-          Sign up with Google
-        </button>
-        <Text className="mt-4 text-center">
-          Already have an account?{" "}
-          <a href="#" className="text-teal-500">
-            Log In
-          </a>{" "}
-          your account.
-        </Text>
-      </Flex>
-    </Flex>
+    </Theme>
   );
-};
-export default ImageComponent;
+}
+
+export default Signup;
